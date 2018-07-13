@@ -22,6 +22,7 @@ import org.cloudbus.cloudsim.DatacenterBroker;
 import org.cloudbus.cloudsim.DatacenterCharacteristics;
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.Rack;
+import org.cloudbus.cloudsim.Aisle;
 import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.Pe;
 import org.cloudbus.cloudsim.Storage;
@@ -204,10 +205,15 @@ public class CloudSimExample4 {
 		
 		List<Rack> rackList = new ArrayList<Rack>();
 		String rname="rack_0";
+		String rname1="rack_1";
 		int rackid=1;
-		rackList.add(new Rack(rname,rackid,hostList));
+		rackList.add(new Rack(rname,rackid++,hostList));
+		rackList.add(new Rack(rname1,rackid,hostList));
 		
-		
+		List<Aisle> AisleList = new ArrayList<Aisle>();
+		String aislename="Aisle_0";
+		int aisleid=1;
+		AisleList.add(new Aisle(aislename,aisleid,rackList));
 		
 		
 		// 5. Create a DatacenterCharacteristics object that stores the

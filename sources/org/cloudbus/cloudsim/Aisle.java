@@ -2,39 +2,39 @@ package org.cloudbus.cloudsim;
 
 import java.util.List;
 
-import org.cloudbus.cloudsim.Host;
+import org.cloudbus.cloudsim.Rack;
 
-public class Rack {
+public class Aisle{
 	
 	private int id;
 	
 	private String name;
 	
-	private List<? extends Host> HostList;
+	private List<? extends Rack> RackList;
 	
 	private Datacenter datacenter;
 	
 	//Instantiates new Rack
-	public Rack(String name,int id,List<Host> HostList) {
+	public Aisle(String name,int id,List<Rack> RackList) {
 		setName(name);
-		setRackId(id);
-		Log.printLine(HostList);
+		setAisleId(id);
+		Log.printLine(RackList);
 		
 	}
 	
 
-	public Rack(int id,List<Host> HostList) {
+	public Aisle(int id,List<Rack> RackList) {
 		this.id=id;
-		this.HostList=HostList;
+		this.RackList=RackList;
 		
 	}
 	
 	
 	//copy constructor
-	public Rack(Rack r) {
+	public Aisle(Aisle r) {
 		this.name="";
-		this.id=r.getRackId();
-		this.HostList=r.getHostList();
+		this.id=r.getAisleId();
+		this.RackList=r.getRackList();
 		
 	}
 	
@@ -49,12 +49,12 @@ public class Rack {
 		}
 		
 		//returns the sectorId
-		public int getRackId() {
+		public int getAisleId() {
 			return id;
 		}
 		
 		//sets the sectorId
-		public void setRackId(int Id) {
+		public void setAisleId(int Id) {
 			this.id = Id;
 		}
 
@@ -72,9 +72,9 @@ public class Rack {
 			return datacenter;
 		}
 		
-		public List<? extends Host> getHostList()
+		public List<? extends Rack> getRackList()
 		{
-			return this.HostList;
+			return this.RackList;
 		}
 
 	

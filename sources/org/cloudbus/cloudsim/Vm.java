@@ -54,6 +54,11 @@ public class Vm {
 
 	/** The host. */
 	private Host host;
+	
+	
+	
+	/** The rack*/
+//	private Rack rack;
 
 	/** In migration flag. */
 	private boolean inMigration;
@@ -432,6 +437,15 @@ public class Vm {
 	public void setHost(Host host) {
 		this.host = host;
 	}
+	
+	/*public void setRack(Rack rack) {
+		this.rack = rack;
+	}
+	
+	public Rack getRack(Rack rack) {
+		return rack;
+	}
+	*/
 
 	/**
 	 * Gets the host.
